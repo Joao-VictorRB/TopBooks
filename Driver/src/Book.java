@@ -1,5 +1,4 @@
 
-
 import java.util.List;
 
 public class Book {
@@ -64,7 +63,8 @@ public class Book {
         System.out.println(); // Add a newline for better readability between books
     }
 
-    public int numberOfBookByAuthor(List<Book> livros, String author) {
+    private int numberOfBookByAuthor(List<Book> livros, String author) {
+        System.out.println(livros);
         int count = 0;
 
         for (Book book : livros) {
@@ -73,5 +73,9 @@ public class Book {
             }
         }
         return count;
+    }
+
+    public String countBooksByAuthor(List<Book> livros, String author){
+        int qtdbooks = numberOfBookByAuthor(livros, author);
     }
 }
