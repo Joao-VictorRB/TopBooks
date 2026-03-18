@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
@@ -63,7 +64,7 @@ public class Book {
         System.out.println(); // Add a newline for better readability between books
     }
 
-    private int numberOfBookByAuthor(List<Book> livros, String author) {
+    public int numberOfBookByAuthor(List<Book> livros, String author) {
         System.out.println(livros);
         int count = 0;
 
@@ -73,9 +74,32 @@ public class Book {
             }
         }
         return count;
+
     }
 
-    public String countBooksByAuthor(List<Book> livros, String author){
-        int qtdbooks = numberOfBookByAuthor(livros, author);
+    public List<String> nameOfAuthor(List<Book> livros){
+
+        List<String> nomes = new ArrayList<>();
+
+        for(Book book: livros){
+            if(!nomes.contains(book.getAuthor())){
+                nomes.add(book.getAuthor());
+            }
+        }
+        return nomes;
     }
+
+    public List<String> getAuthorTitle(List<Book> livros, String author){
+        
+        List<String> AuhtorTitle = new ArrayList<>();
+
+        for(Book book : livros){
+            if(book.getAuthor().equals(author) && !AuhtorTitle.contains(book.getTitle())){
+                AuhtorTitle.add(book.getTitle());
+            }
+        }
+
+        return AuhtorTitle;
+    }
+
 }

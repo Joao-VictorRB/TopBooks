@@ -8,11 +8,24 @@ public class Driver {
         List<Book> books = datasetReader.readDataset("Driver/dataset/data.csv");
 
         Book bookInstance = new Book(null, null, null, null, null, null, null);
-
-        int countB = bookInstance.countBooksByAuthor(books, "J.K. Rowling");
-
-        System.out.println(countB);
-        //System.out.println(datasetReader + "\n");
         
+        //Tarefa I
+        int countB = bookInstance.numberOfBookByAuthor(books, "J.K. Rowling");
+        String msg = "Número total de livros de J.K. Rowling: " + countB;
+        System.out.println(msg);
+        
+
+        //Tarefa II
+        /* List<String> authors = bookInstance.nameOfAuthor(books);
+        for(String autor : authors){
+              System.out.println(autor);  
+        } */
+
+        //Tarefa III
+         
+        List <String> ListBookAuthor = bookInstance.getAuthorTitle(books, "J.K. Rowling");
+         for(String title : ListBookAuthor){
+              System.out.println(title);  
+        }
     }
 }
