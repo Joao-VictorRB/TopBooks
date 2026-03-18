@@ -16,10 +16,10 @@ public class Driver {
         
 
         //Tarefa II
-        /* List<String> authors = bookInstance.nameOfAuthor(books);
+        List<String> authors = bookInstance.nameOfAuthor(books);
         for(String autor : authors){
               System.out.println(autor);  
-        } */
+        } 
 
         //Tarefa III
          
