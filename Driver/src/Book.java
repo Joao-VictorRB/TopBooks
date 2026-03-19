@@ -1,6 +1,8 @@
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Book {
     
@@ -101,5 +103,21 @@ public class Book {
 
         return AuhtorTitle;
     }
+
+    public List<String> getBooksByReview(List<Book> livros, String rating){
+
+    Set<String> uniqueBooks = new HashSet<>();
+
+    for (Book book : livros) {
+
+        if (rating != null && rating.equals(book.getUserRating())) {
+
+            String textoFormatado = book.getTitle() + " - " + book.getAuthor();
+            uniqueBooks.add(textoFormatado);
+        }
+    }
+
+    return new ArrayList<>(uniqueBooks);
+}
 
 }
