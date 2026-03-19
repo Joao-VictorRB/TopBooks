@@ -29,10 +29,18 @@ public class Driver {
         } */
 
         //Tarefa IV
-        List <String> getBooksByReview = bookInstance.getBooksByReview(books, "4.6");
+       /*  List <String> getBooksByReview = bookInstance.getBooksByReview(books, "4.6");
         for(String title : getBooksByReview){
               System.out.println(title);  
+        } */
+
+        //Tarefa V
+        List <String> getTitlebyPrice = bookInstance.getTitlebyPrice(books, "J.K. Rowling");
+
+        for(String title : getTitlebyPrice){
+              System.out.println(title);  
         }
+
 
     }
 }

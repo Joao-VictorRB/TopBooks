@@ -106,18 +106,34 @@ public class Book {
 
     public List<String> getBooksByReview(List<Book> livros, String rating){
 
-    Set<String> uniqueBooks = new HashSet<>();
+        Set<String> uniqueBooks = new HashSet<>();
 
-    for (Book book : livros) {
+        for (Book book : livros) {
 
-        if (rating != null && rating.equals(book.getUserRating())) {
+            if (rating != null && rating.equals(book.getUserRating())) {
 
-            String textoFormatado = book.getTitle() + " - " + book.getAuthor();
-            uniqueBooks.add(textoFormatado);
+                String textoFormatado = book.getTitle() + " - " + book.getAuthor();
+                uniqueBooks.add(textoFormatado);
+            }
         }
+
+        return new ArrayList<>(uniqueBooks);
     }
 
-    return new ArrayList<>(uniqueBooks);
-}
+    public List<String> getTitlebyPrice(List<Book> livros, String author){
+        
+       Set<String> BooksPrice = new HashSet<>();
+
+        for (Book book : livros) {
+
+            if (author.equals(book.getAuthor())) {
+
+                String textoFormatado = book.getTitle() + " - " + book.getPrice();
+                BooksPrice.add(textoFormatado);
+            }
+        }
+
+        return new ArrayList<>(BooksPrice);
+    }
 
 }
